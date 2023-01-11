@@ -7,61 +7,51 @@
     </head>
     <body>
         <h1>ROCK PAPER SCISSORS!</h1>
-        <img src="#" id="resultimg">
-        <input type="button" value="Battle!" id="btn" onclick="window.location.reload(true)">
+        <input type="button" onclick="rps()">
+        <img src="" id="resultimg">
+         
         <script>
-            var player = window.prompt("What do you choose?");
 
-            var results = document.getElementById("resultimg");
+            function rps() { 
+            // Initializing Variables
+                var userChoice = prompt("Do you choose rock, paper or scissors?");
+                var computerChoice = Math.random();
+                var result = document.getElementById("resultimg")
 
-            var randomNumber = Math.floor(Math.random() * 2);
+            // Randomly selecting correct value for computerChoice
+                if ( computerChoice < 0.34 ) {
+	                computerChoice = "rock";
+                } else if ( computerChoice <= 0.67 ) {
+	                computerChoice = "paper";
+                } else {
+	                computerChoice = "scissors";
+                }
 
-            var opponent;
-
-            if (player == "rock" || player == "paper" || plyer == "scissor"){
-
-                switch(randomNumber) {
-                    case 0:
-                        opponent = "rock"
+            
+                switch (true) {
+                    case computerChoice == userChoice:
+                        result.src = "draw.png";
                         break;
-                
-                    case 1:
-                        opponent = "paper"
+                    case computerChoice == "rock" && userChoice == "paper": 
+                        result.src = "WIN.png";
                         break;
-                    
-                    case 2:
-                        opponent = "scissor"
+                    case computerChoice == "paper" && userChoice == "scissors": 
+                        result.src = "WIN.png";
+                        break;
+                    case computerChoice == "scissors" && userChoice == "rock": 
+                        result.src = "WIN.png";
+                        break;
+                    case computerChoice == "paper" && userChoice == "rock": 
+                        result.src = "LOSS.png";
+                        break;
+                    case computerChoice == "scissors" && userChoice == "paper": 
+                        result.src = "LOSS.png";
+                        break;
+                    case computerChoice == "rock" && userChoice == "scissors": 
+                        result.src = "LOSS.png";
                         break;
                 }
-                switch(true){
-                    case player == opponent:
-                        results.src("draw.png")
-                        break;
-                    case player == "paper"&& opponent == "rock":
-                        results.src ("WIN.png")
-                        break;
-                    case player == "rock"&& opponent == "scissor":
-                        results.src ("WIN.png")
-                        break;
-                    case player == "scissor"&& opponent == "paper":
-                        results.src ("WIN.png")
-                        break;
-                    case player == "scissor"&& opponent == "rock":
-                        results.src ("LOSS.png")
-                        break;
-                    case player == "rock"&& opponent == "paper":
-                        results.src ("LOSS.png")
-                        break;
-                    case player == "paper"&& opponent == "scissor":
-                        results.src ("LOSS.png")
-                        break;
-                        
 
-                        
-                }
-            }
-            else{
-                alert("Invalid input")
             }
         </script>
     </body>
