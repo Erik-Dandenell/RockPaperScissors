@@ -3,23 +3,31 @@
     <head>
         <meta charset="utf-8">
         <title>Rock Paper Scissors</title>
+      
         <link rel="stylesheet" href="rps.css">
     </head>
     <body>
+        <img src="fist.png" class="icon">
+        <img src="open-hands.png" class="icon">
+        <img src="scissor.png" class="icon">
         <h1>ROCK PAPER SCISSORS!</h1>
-        <input type="button" onclick="rps()">
-        <img src="" id="resultimg">
+        <p>Click the button to challenge the computer for a game of rock paper scissors.</p>
+        <button type="button" onclick="rps()">Click me</button>
+        <br> </br>
+        <img src="" id="resultimg" class="image">
          
         <script>
+            completed = true
 
             function rps() { 
+            if (!completed) { return }
             // Initializing Variables
                 var userChoice = prompt("Do you choose rock, paper or scissors?");
                 var computerChoice = Math.random();
                 var result = document.getElementById("resultimg")
 
-            // Randomly selecting correct value for computerChoice
-                if ( computerChoice < 0.34 ) {
+            //  Randomly selects a number, at which point there is approx 1/3rd chance for each outcome. 
+                if ( computerChoice < 0.33 ) {
 	                computerChoice = "rock";
                 } else if ( computerChoice <= 0.67 ) {
 	                computerChoice = "paper";
@@ -27,9 +35,10 @@
 	                computerChoice = "scissors";
                 }
 
-            
+            //  Checks all the different possible outcomes 
                 switch (true) {
                     case computerChoice == userChoice:
+                        //  changes the image to the appropriate result
                         result.src = "draw.png";
                         break;
                     case computerChoice == "rock" && userChoice == "paper": 
@@ -52,6 +61,8 @@
                         break;
                 }
 
+                result.classList.toggle('animation'); completed = false
+                setTimeout(function() { result.classList.toggle('animation'); completed = true}, 500)
             }
         </script>
     </body>
