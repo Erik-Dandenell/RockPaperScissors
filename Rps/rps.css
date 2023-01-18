@@ -1,0 +1,88 @@
+img[src=""],
+img:not([src]){
+  display:none;
+}
+
+   /* */
+  body {
+    font-family: "verdana", sans-serif;  /* the font */
+    background-color: 2#5D4055ff; /* background color of the website */
+    text-align: center; /*Aligning everything inside the body to the center. */
+}
+
+h1 {
+  
+  text-shadow: 2px 2px 4px #040404; /* Having a shadow to the text to match the icons*/
+    color: #fff; /* color of the header, "rock paper scissors! */
+    padding: 1rem;
+    margin: 0;
+    font-size: 2rem;
+    
+}
+
+p {  /* the text under h1 aka "Click the button to challenge the computer for a game of rock paper scissors."*/
+  text-shadow: 2px 2px 4px #000000;  
+    color: #fff;
+    padding: 1rem;
+    margin: 0;
+    font-size: 0.90rem; 
+    
+      
+}
+
+button:hover {
+    background-color: rgb(144, 118, 136); /* the effect on hovering the button (changes color) */
+}
+
+button {
+    background-color: #ADA0A6; /* original color before hovering over the button*/
+    border: none;
+    color: white; 
+    padding: 16px 32px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px; /* the space between*/
+    cursor: pointer;
+    border-radius: 5px; /* shape, increasing = making it rounder*/
+    top: -100px;
+    
+  }
+
+
+.image {
+height:350px;
+width: 350px;
+margin:0 auto;
+border-radius: 50%;  /* changing the shape of the image */
+border: 3px solid rgba(0, 0, 0, 0.52);  /* the width of the border + the color of it*/
+}
+
+.animation {
+  animation: shake 0.5s; /* shake animation */
+}
+
+
+
+
+@keyframes shake {
+10%, 90% {
+    transform: translate3d(-6px, 0, 0);  /* shaking stuff again. */
+}
+20%, 80% {
+    transform: translate3d(3px, 0, 0);
+}
+30%, 50%, 70% {
+    transform: translate3d(-8px, 0, 0);
+}
+40%, 60% {
+    transform: translate3d(2px, 0, 0);
+}
+}
+  
+.icon {
+  height: 50px;  /* dimensions of icons at the top. */
+  width: 50px;
+  
+ }
+
