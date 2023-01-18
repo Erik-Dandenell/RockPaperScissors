@@ -6,7 +6,7 @@ img:not([src]){
    /* */
   body {
     font-family: "verdana", sans-serif;  /* the font */
-    background-color: 2#5D4055ff; /* background color of the website */
+    background-color: #5D4055ff; /* background color of the website */
     text-align: center; /*Aligning everything inside the body to the center. */
 }
 
